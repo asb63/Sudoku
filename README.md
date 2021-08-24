@@ -1,18 +1,18 @@
 # Sudoku
 Simple Sudoku web app. My first exposure to Javascript.
 
-# Who made this?
+## Who made this? ##
     My name is Andrew, my online handle is usually related to lemons 
     My degree in Computer Science heavily focused on the back-end using C++
 
-# What is this?
+## What is this? ##
     This is a practice-project to begin working with JavaScript.
 
-# Why JavaScript?
+## Why JavaScript? ##
     I cannot find a job in software. Many companies want JavaScript devs.
     I want to create GUI, and JS works nicely with html.
 
-# Why Sudoku?
+## Why Sudoku? ##
     1. Its a simple game with few rules. 
     2. I like to play Sudoku, and I don't like ads interrupting me.
     3. Making Sudoku provides an opportunity to practice important CS/Math topics.
@@ -23,12 +23,12 @@ Simple Sudoku web app. My first exposure to Javascript.
         Combinatorics
 
 
-# Are you a Sudoku expert?
+## Are you a Sudoku expert? ##
     Nope. 
     I learned most of what I know about Sudoku while working on this project.
     I provide credit/links below to the information sources
 
-# Information Sources
+## Information Sources ##
     "The Mathematics of Sudoku" - Tom Davis
         https://people.math.sc.edu/girardi/sudoku/math-of-sudoku.pdf
 
