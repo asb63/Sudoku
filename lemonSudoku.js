@@ -480,7 +480,7 @@ class Sudoku{
     }
 
     /**
-     * Looks for naked and hidden pairs in the puzzle candidates.
+     * Looks for naked and hidden pairs in the puzzle candidates. DOES NOTHING YET
      */
     findPairs(){
         let rowCounts = {1:[], 2:[], 3:[], 4:[], 5:[], 6:[], 7:[], 8:[], 9:[]};
@@ -498,37 +498,14 @@ class Sudoku{
             colCandi.push(this.candidatesInContainer('col', contNum));
             boxCandi.push(this.candidatesInContainer('box', contNum));
             
-            for(let val = 1; val <= Sudoku.N; val++){
-                
-                rowCounts[contNum].push(Sudoku.countOccurrences(rowCandi.flat(), val));
-                colCounts[contNum].push(Sudoku.countOccurrences(colCandi.flat(), val));
-                boxCounts[contNum].push(Sudoku.countOccurrences(boxCandi.flat(), val));
-            }
+             
         }
 
-        //console.table(rowCounts);
-        //console.table(colCounts);
-        //console.table(boxCounts);
         console.log('row candidates', rowCandi);
         console.log('col candidates', colCandi);
         console.log('box candidates', boxCandi);
 
-        for(let contNum = 1; contNum <= Sudoku.N; contNum++){
-            for(let val = 1; val <= Sudoku.N; val++){
-                if(rowCounts[contNum][val-1] === 2){
-                    // console.log(`Hidden single\nRow: ${contNum}\nVal: ${val}`);
-                    //hiddenSingles.push([`row`, contNum, val]);
-                }
-                if(colCounts[contNum][val-1] === 2){
-                    // console.log(`Hidden single\nCol: ${contNum}\nVal: ${val}`);
-                    //hiddenSingles.push([`col`, contNum, val]);
-                }
-                if(boxCounts[contNum][val-1] === 2){
-                    // console.log(`Hidden single\nBox: ${contNum}\nVal: ${val}`);
-                    //hiddenSingles.push([`box`, contNum, val]);
-                }
-            }
-        }
+        console.log('Pairs ' , pairs);
     }
 
     /**
@@ -540,7 +517,7 @@ class Sudoku{
         //this.findCandidates();
         let isSolved = this.puzzleSolved();
         this.findSingles();
-        //this.findPairs();
+        this.findPairs();
 
         for(let j = 0; j < Sudoku.TOTAL_CELLS; j++){
             if(this.candidates[j] !== undefined) return false;
