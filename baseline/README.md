@@ -1,99 +1,113 @@
 # Sudoku (WIP)
 Simple Sudoku web app. My first exposure to Javascript. WIP
 
-## Instructions ##
-    Place the following files in a folder on your machine. 
-    
-    index.html 
-    styles.css 
-    lemonSudoku.js
-
-    Open index.html in a browser.
-    press 'h' key to see help menu (alerts must be allowed)
-
-## Who made this? ##
-    My name is Andrew
-    My degree in Computer Science heavily focused on the back-end using C++
-
 ## What is this? ##
     This is a practice-project to begin working with JavaScript.
+    The end goal is a working Sudoku player/solver with a satisfying UX.
     
-    This is the foundation. I intend to improve on this project as I learn more. The end goal is a working Sudoku player/solver with a satisfying UX.
+    This is the first major change in this project, begin iteration 2. 
 
-## Why JavaScript? ##
-    I cannot find a job in software. Many companies want JavaScript devs.
-    I want to create GUI, and JS works nicely with html.
+## lemon-sudoku/ ##
 
-## Why Sudoku? ##
-    1. Its a simple game with few rules. 
-    2. I like to play Sudoku, and I don't like ads interrupting me.
-    3. Making Sudoku provides an opportunity to practice important CS/Math topics.
-        
-        Abstract Data Types
-        Matrix Manipulation 
-        Linear Algebra
-        Combinatorics
+This is the second iterion of the "lemon-sudoku" project.
+The baseline/ folder contains the first iteration.
+
+This is what I have from the baseline.
+
+* html/css representation of a Sudoku puzzle "player" 
+    * very ugly.
+    * poorly structured.
+    * not intuitive. 
+    * it works.
+
+* js code for sudoku logic and DOM interaction
+    * Poorly structured.
+    * Much redundant code.
+    * Inconsistent style.
+    * Does not generate puzzle.
+    * Inefficient algorithms.
+    * Difficult puzzles cannot be solved. 
+    * Solves many puzzles.
+
+* lemon icon
+    * Beauty.
+    * Perfection.
+    * Found on MS Paint3D.
+
+### Lessons/Takeaways ###
+
+1. Need better structure to represent a puzzle.
+   
+   Currently there are redundant copies of the "puzzle" passed
+   to the Sudoku constructor. This feels unnecessary. As I progress, 
+   I notice better ways to implement nearly everything. 
+   
+   Since I am learning from scratch, I added code instead of fixing code.
+   I think it was appropriate for now. This allowed me to work faster
+   and learn some basics. I think of this path as a breadth-first intro 
+   to javascript. Now I want to shift my focus to better understand
+   the most important components.
+
+   In short, fix code instead of add code. 
+
+2. Solving sudoku is actually quite complicated.
+
+   The algorithm implemented in the baseline only uses simple techniques.
+   This is enough to solve a lot of puzzles, but to guarentee a solution 
+   requires far more complexity. The main "work" to be done by the algorithm 
+   is traversing arrays and comparing values. 
+
+   When humans solve a sudoku puzzle, visual cues help us identify patterns.
+   
+   When computers solve a sudoku puzzle, it is inherently complex. 
+   A standard puzzle has 81 cells, and each empty cell can have "candidates".
+   To solve a single cell, we must correctly eliminate all but 1 candidate.
+   An important elimination technique requires finding candidate pairs/triples/quads
+   within a specified container. A container may be a row/column/box, there are 9 
+   of each, and all have a length of 9. This means there are many opportunities for a candidate to be eliminated from a cell, but it might require looking through and comparing each candidate for each cell in the specified container multiple times. 
+   
+   This is the headache that caused me to reconsider my early choices.
+
+3. Better organization will enable more efficient and readable code.
+   
+   The way that the Sudoku class handles a puzzle is hacky and annoying to deal with.
+   The Sudoku class does nearly everything, and I am forced to iterate through arrays
+   manually in most functions. Since this work grows exponentially when solving each cell,
+   it would be convenient for a cell to have more info. 
+   
+   Here's an example of pointless redundancy. 
+   The puzzle is most simply represented as a string or array-like object with 81 elements, but we need to process that array as a square matrix where N = 9. This matrix also has 9 sections or 'boxes' which are 3x3 squares. When looking for candidates and candidates of a cells neighbors within any given container (row/column/box) there is overhead in
+   converting a linear index into a matrix index. There is a special conversion for 'box numbers' that utilizes a hard-coded index lookup table to find which box contains an index.
+   This overhead is repeated with the exponential work done to eliminate candidates and 
+   solve the puzzle. 
+
+   If the cell was a more useful object instead of a character, we could eliminate overhead by calculating once and saving it with the cell for the whole duration.
+   While i'm at it, a since the puzzle needs to be processed like a 9x9 matrix with 9 sub-sections. A container could also be its own object, with useful data about its 
+   cells.
 
 
-## Are you a Sudoku expert? ##
-    Nope. 
-    I learned most of what I know about Sudoku while working on this project.
-    I provide credit/links below to the information sources
+### Plan ###
 
-## Information Sources ##
-    "The Mathematics of Sudoku" - Tom Davis
-        https://people.math.sc.edu/girardi/sudoku/math-of-sudoku.pdf
+At this stage I have much work to do but I am happy with the progress.
+I have an ugly sudoku player/solver that is not user friendly but it DOES solve some base-case puzzles. It does not generate puzzles yet and that is important but not
+needed to meet my immediate goal. For now, I will basically rewrite the code in a 
+more modular way. Since I understand many pitfalls caused by my early design choices, I 
+will find a stronger solution to those problems which is great because this whole project
+is about learning javascript!
 
-    "Sudoku Glossary of Terms" - sudokuprimer.com
-        https://sudokuprimer.com/glossary.php
-
-    "Sudoku Tips" - sudokuessentials.com
-        https://www.sudokuessentials.com/sudoku_tips.html
-
-    HTML and CSS Sudoku Table - whatwg.org "HTML/Tabular Data" section 4.9.1 "The table element"
-        Adapted from this original resource document.
-        https://html.spec.whatwg.org/multipage/tables.html#the-table-element
+In my research, I learn that React might be a solid fit for this project.
+* React provides great potential to improve UX. 
+* It requires me to split the code into components, which I wanted to do anyway.
+* Its a valuble and popular skill in the current job market.
+* I hope it will help me spend less time on CSS and more time with Sudoku and Javascript
 
 
-# Sample game strings:
+To help with organization, I'll better define my requirements.
+   Goal: A working Sudoku player/solver with a satisfying UX.
+   * Must solve ALL valid puzzles.
+   * Cells and containers should contain more info to reduce overhead.
+   * Candidates must be displayed if a cell is not solved.
+   * User must be able to mark and delete candidates for a cell manually.
 
 
-* Strings with no 0 are solved puzzles. 
-* Strings including 0 are unsolved puzzles or masks.
-* Masks look like binary numbers. They describe what cells are excluded from a completed puzzle.
-
-## Easy ##
-
-* 049000807000010400302007006064721530285409760000080290000304600408160000030000002
-* 649253817857916423312847956964721538285439761173685294521374689498162375736598142
-
-* 490010002030079500500834000800700290009000100012008006000387001001540060200090053
-* 498615732136279584527834619843761295659423178712958346965387421381542967274196853
-
-
-## Medium ##
-
-* 659813427832647159417295386764129538125378964398564271943782615571436892286951743
-* 101110010010100110101011111011101011101101101110101110111110101011001010010011101
-* 050003407802047009010200000700020500020070060008060001000002010500430802206900040
-
-* 731849652469523817852716493287435961643291578195678234924167385318952746576384129
-* 010011101101101011011110110001111011100111001110111100011011110110101101101110010
-* 701800050060020800800006003280000900043000570005000034900100005008050040070004109
-
-
-## Hard ##
-
-* 143596872589721436627834951732645189856319247914278365498167523261453798375982614
-* 110110100101111111011010111111010010010111010010010111111010110111111101001011011
-* 003006072080000000600804000000605109806000207904208000000107003000000090370900600
-
-* 523179684867245319194638572438597126619382457275416893741953268952864731386721945
-* 011101110101111110011110000001111111111000111111111100000011110011111101011101110
-* 500070004060000009100008572430000000000382000000000093741900008900000030300020005
-
-## Harder ##
-
-* 713652984489317562625498137236945871974186325158723649891234756347561298562879413
-* 111101110001111010011111001110011111101010101111110011100111110010111100011101111
-* 000050004480000502600000130006900000070106020000003600091000006307000098500070000
+   
