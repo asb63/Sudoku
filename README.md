@@ -1,12 +1,24 @@
-# Sudoku
-Simple Sudoku web app. My first exposure to Javascript.
+# Sudoku (WIP)
+Simple Sudoku web app. My first exposure to Javascript. WIP
+
+## Instructions ##
+    Place the following files in a folder on your machine. 
+    
+    index.html 
+    styles.css 
+    lemonSudoku.js
+
+    Open index.html in a browser.
+    press 'h' key to see help menu (alerts must be allowed)
 
 ## Who made this? ##
-    My name is Andrew, my online handle is usually related to lemons 
+    My name is Andrew
     My degree in Computer Science heavily focused on the back-end using C++
 
 ## What is this? ##
     This is a practice-project to begin working with JavaScript.
+    
+    This is the foundation. I intend to improve on this project as I learn more. The end goal is a working Sudoku player/solver with a satisfying UX.
 
 ## Why JavaScript? ##
     I cannot find a job in software. Many companies want JavaScript devs.
@@ -44,6 +56,7 @@ Simple Sudoku web app. My first exposure to Javascript.
 
 
 # Sample game strings:
+
 
 * Strings with no 0 are solved puzzles. 
 * Strings including 0 are unsolved puzzles or masks.
