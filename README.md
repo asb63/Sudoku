@@ -2,10 +2,10 @@
 Simple Sudoku web app. My first exposure to Javascript. WIP
 
 ## What is this? ##
-    This is a practice-project to begin working with JavaScript.
-    The end goal is a working Sudoku player/solver with a satisfying UX.
+   This is a practice-project to begin working with JavaScript.
+   The end goal is a working Sudoku player/solver with a satisfying UX.
     
-    This is the first major change in this project, begin iteration 2. 
+   This is the first major change in this project, begin iteration 2. 
 
 ## lemon-sudoku/ ##
 
