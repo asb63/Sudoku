@@ -2,10 +2,10 @@
 Simple Sudoku web app. My first exposure to Javascript. WIP
 
 ## What is this? ##
-    This is a practice-project to begin working with JavaScript.
-    The end goal is a working Sudoku player/solver with a satisfying UX.
+   This is a practice-project to begin working with JavaScript.
+   The end goal is a working Sudoku player/solver with a satisfying UX.
     
-    This is the first major change in this project, begin iteration 2. 
+   This is the first major change in this project, begin iteration 2. 
 
 ## lemon-sudoku/ ##
 
@@ -103,7 +103,8 @@ In my research, I learn that React might be a solid fit for this project.
 
 
 To help with organization, I'll better define my requirements.
-   Goal: A working Sudoku player/solver with a satisfying UX.
+   
+Goal: A working Sudoku player/solver with a satisfying UX.
    * Must solve ALL valid puzzles.
    * Cells and containers should contain more info to reduce overhead.
    * Candidates must be displayed if a cell is not solved.
