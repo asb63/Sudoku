@@ -109,3 +109,9 @@ Goal: A working Sudoku player/solver with a satisfying UX.
    * Cells and containers should contain more info to reduce overhead.
    * Candidates must be displayed if a cell is not solved.
    * User must be able to mark and delete candidates for a cell manually.
+
+Step 1: Convert /baseline/ code to react compatible form.
+Step 2: Reform structure during and after step 1.
+Step 3: Add support for user to edit candidates.
+Step 4: Improve algorithm to solve all puzzles.
+Step 5: TODO?
