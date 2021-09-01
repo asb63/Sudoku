@@ -7,10 +7,20 @@ export class SudokuBoard extends Component {
     
     constructor(props){
         super(props);
+        const cell_start = SUDOKU.LAYOUT_GRID;
+        cell_start.forEach((v, i, arr)=> {
+            arr[i] ={
+                row: Math.floor(i / SUDOKU.N) + 1,
+                col: (i%9) + 1,
+                box: SUDOKU.BOX_NUM[i],
+                value: 0,
+                index: i,
+            }
+        })
 
         this.state = {
             history: [{
-                cells: Array(SUDOKU.TOTAL_CELLS).fill(null),
+                cells: cell_start,
             }],
             moveNumber: 0,
         };
@@ -39,21 +49,10 @@ export class SudokuBoard extends Component {
     }
 
     renderCell(idx){
-        let i = idx - 1
-        let r = Math.floor(i / SUDOKU.N) + 1
-        let c = (i % SUDOKU.TOTAL_CELLS) + 1
-        
+        const curr = this.state.history[this.state.moveNumber][idx]
 
         return(
-            <Cell
-                value={0}//FIX ASAP
-                idx={i}
-                row={r}    //generate row number
-                col={c}
-                box={SUDOKU.BOX_NUM[i]}
-                id={`r${r}c${c}`}
-                
-            />
+            <Cell cell={curr}/>
         );
     }
 
@@ -81,6 +80,7 @@ export class SudokuBoard extends Component {
                 <table className="sudoku-grid">
                     
                     <tbody>
+                        {/**this*/}
                         {this.renderRow(1)}
                         {this.renderRow(2)}
                         {this.renderRow(3)}
