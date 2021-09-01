@@ -20,6 +20,13 @@ export const TOTAL_CELLS = 81;
  */
 export const GAME_STRING_REGEX = /[0-9]{81}/;
 
+
+/**
+ * Array of default candidates for an empty board. These are eliminated to find an answer for a cell.
+ *  `[1, 2, 3, 4, 5, 6, 7, 8, 9]`
+ */
+export const CANDIDATES_DEFAULT = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
 /**
  * holds index for 3x3 box subgroups. `IDX_OF_BOX[1-9] returns a {number} array`  
  */
