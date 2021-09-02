@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import * as SUDOKU from '../../constants/sudoku_constants'
+import './styles.css'
 
 function Cell(cell) {
     
@@ -13,7 +14,7 @@ function Cell(cell) {
     }
 
     return (
-        <td 
+        <div 
             className="cell"
             idx={cell.idx}
             row={cell.row}
@@ -25,11 +26,11 @@ function Cell(cell) {
                     size="1" 
                     maxLength="1" 
                     defaultValue={cell.value}
-                    onChange={handleChange}
+                    //onChange={handleChange}
                     //onClick={handleClick}
                 >
                 </input> 
-        </td>
+        </div>
 
     )
 }

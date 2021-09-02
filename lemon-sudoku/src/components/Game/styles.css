@@ -1,0 +1,13 @@
+.game-container {
+    min-width: 30rem;
+    
+    display: flex;
+    flex-flow: row wrap;
+    padding: 10px;
+    
+    justify-content:center;
+    align-content: space-around;
+    overflow: auto;
+    background-color: darkslategray;
+    justify-self: center;
+  }

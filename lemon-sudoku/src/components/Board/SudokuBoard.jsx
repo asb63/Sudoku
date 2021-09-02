@@ -1,17 +1,18 @@
 import React, { Component } from 'react'
 import * as SUDOKU from '../../constants/sudoku_constants'
 import Cell from '../Cell/Cell';
+import './styles.css'
 
 
 export class SudokuBoard extends Component {
     
     constructor(props){
         super(props);
-        const cell_start = SUDOKU.LAYOUT_GRID;
-        cell_start.forEach((v, i, arr)=> {
+        const cells_start = SUDOKU.LAYOUT_GRID;
+        cells_start.forEach((v, i, arr)=> {
             arr[i] ={
                 row: Math.floor(i / SUDOKU.N) + 1,
-                col: (i%9) + 1,
+                col: (i % SUDOKU.N) + 1,
                 box: SUDOKU.BOX_NUM[i],
                 value: 0,
                 index: i,
@@ -20,8 +21,9 @@ export class SudokuBoard extends Component {
 
         this.state = {
             history: [{
-                cells: cell_start,
+                cells: cells_start,
             }],
+            currentCells: cells_start.slice(),
             moveNumber: 0,
         };
         
@@ -42,17 +44,18 @@ export class SudokuBoard extends Component {
             history: history.concat([{
                 cells: cells
             }]),
+            currentCells: cells,
             moveNumber: history.length,
         })
        
         
     }
 
-    renderCell(idx){
-        const curr = this.state.history[this.state.moveNumber][idx]
-
+    renderCell(curr){
+        let cell_key = `r${curr.row}c${curr.col}b${curr.box}`;
+       
         return(
-            <Cell cell={curr}/>
+            <Cell key={cell_key} cell={curr}/>
         );
     }
 
@@ -77,21 +80,9 @@ export class SudokuBoard extends Component {
     render() {
         return (
             
-                <table className="sudoku-grid">
-                    
-                    <tbody>
-                        {/**this*/}
-                        {this.renderRow(1)}
-                        {this.renderRow(2)}
-                        {this.renderRow(3)}
-                        {this.renderRow(4)}
-                        {this.renderRow(5)}
-                        {this.renderRow(6)}
-                        {this.renderRow(7)}
-                        {this.renderRow(8)}
-                        {this.renderRow(9)}
-                    </tbody>
-                </table>
+                <div className="sudoku-grid">
+                    {this.state.history[this.state.moveNumber].cells.map(i => this.renderCell(i))}
+                </div>
             
         )
     }
