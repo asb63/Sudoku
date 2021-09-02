@@ -110,8 +110,8 @@ Goal: A working Sudoku player/solver with a satisfying UX.
    * User must be able to mark and delete candidates for a cell manually.
 
 Step 
-   1: Convert /baseline/ code to react compatible form.
-   2: Reform structure during and after  1.
-   3: Add support for user to edit candidates.
-   4: Improve algorithm to solve all puzzles.
-   5: TODO?
+   1.  Convert /baseline/ code to react compatible form.
+   2. Reform structure during and after  1.
+   3. Add support for user to edit candidates.
+   4. Improve algorithm to solve all puzzles.
+   5. TODO?
