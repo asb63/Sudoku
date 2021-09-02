@@ -32,7 +32,6 @@ This is what I have from the baseline.
 * lemon icon
     * Beauty.
     * Perfection.
-    * Found on MS Paint3D.
 
 ### Lessons/Takeaways ###
 
@@ -110,8 +109,9 @@ Goal: A working Sudoku player/solver with a satisfying UX.
    * Candidates must be displayed if a cell is not solved.
    * User must be able to mark and delete candidates for a cell manually.
 
-Step 1: Convert /baseline/ code to react compatible form.
-Step 2: Reform structure during and after step 1.
-Step 3: Add support for user to edit candidates.
-Step 4: Improve algorithm to solve all puzzles.
-Step 5: TODO?
+Step 
+   1: Convert /baseline/ code to react compatible form.
+   2: Reform structure during and after  1.
+   3: Add support for user to edit candidates.
+   4: Improve algorithm to solve all puzzles.
+   5: TODO?

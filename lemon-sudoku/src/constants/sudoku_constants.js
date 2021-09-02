@@ -66,9 +66,3 @@ export const LAYOUT_GRID = [0 , 1, 2, 3, 4, 5, 6, 7, 8,
                             54,55,56,57,58,59,60,61,62,
                             63,64,65,66,67,68,69,70,71,
                             72,73,74,75,76,77,78,79,80]
-
-// export const cell_info = (idx) = {
-//     row: Math.floor(idx / Sudoku.N) + 1,
-//     col: (idx % Sudoku.N) + 1,
-//     box: BOX_NUM[idx],
-// }
