@@ -8,7 +8,7 @@
 
 .App-logo {
   max-height: 10rem;
-  pointer-events: none;
+  pointer-events: all;
   overflow: hidden;
 }
 
