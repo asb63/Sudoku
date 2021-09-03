@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import * as SUDOKU from '../../constants/sudoku_constants'
+import * as SUDOKU from '../../../constants/sudoku_constants.js'
 import './styles.css'
 
 function Cell(cell) {

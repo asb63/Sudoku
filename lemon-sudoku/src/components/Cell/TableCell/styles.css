@@ -1,8 +1,7 @@
 
-.cell {
+/* .cell {
     position: relative;
     box-sizing: content-box;
-    
     
 }
 
@@ -10,6 +9,7 @@
     content: '';
     display: block;
     padding-top: 100%;
+    
   }
 
 .cell input {
@@ -17,6 +17,6 @@
     top:0; left:0;
     width: 90%;
     height: 90%;
-    
+    background-color: whitesmoke;
     text-align: center;
-}
+} */

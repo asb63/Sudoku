@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import * as SUDOKU from '../../constants/sudoku_constants'
-import Cell from '../Cell/Cell';
+import * as SUDOKU from '../../../constants/sudoku_constants'
+import Cell from '../../Cell/Cell';
 import './styles.css'
 
 
@@ -28,6 +28,7 @@ export class SudokuBoard extends Component {
         };
         
         this.handleChange = this.handleChange.bind(this);
+        console.log(`'Sudoku grid from 'Board/SimpleTable/SudokuBoard.jsx'`);
         
     };
     

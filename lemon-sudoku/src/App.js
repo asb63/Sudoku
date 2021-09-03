@@ -7,7 +7,7 @@ function App() {
 
   //allows logo to be hidden on click
   const [logoHidden, setLogoHidden] = useState(false);
-
+  
 
   return (
     <div className="App">

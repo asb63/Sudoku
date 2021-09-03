@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import SudokuBoard from '../Board/SudokuBoard'
+import SudokuBoard from '../Board/SimpleTable/SudokuBoard'
 //import InfoPanel from '../InfoPanel/InfoPanel'
 import './styles.css'
 
@@ -8,7 +8,7 @@ export class Game extends Component {
     render() {
         return (
         <div className="game-container">
-        <SudokuBoard ></SudokuBoard>
+            <SudokuBoard ></SudokuBoard>
         
         </div>
         )
