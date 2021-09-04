@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import SudokuBoard from '../Board/SimpleTable/SudokuBoard'
+import SudokuBoard from '../Board/SimpleTable/SudokuBoard.jsx'
 //import InfoPanel from '../InfoPanel/InfoPanel'
 import './styles.css'
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import * as SUDOKU from '../../../constants/sudoku_constants'
-import Cell from '../../Cell/DivCell/Cell';
+import Cell from '../../Cell/DivCell/Cell'
 import './styles.css'
 
 
